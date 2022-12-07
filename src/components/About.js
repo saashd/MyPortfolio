@@ -9,10 +9,11 @@ export default function About() {
             <p id='head1' className="header">
                 Hello, I'm Alex!
             </p>
+            <br/>
             <p id='head2' className="header">
                 B.Sc in Information Systems from Technion,Israel
             </p>
-            <br/>
+            <br/><br/>
             <p id='head3' className="header">
                 Looking for my first position as a Front End\Full Stuck Developer
                 I'm a well-organized person, problem solver with high attention to details.

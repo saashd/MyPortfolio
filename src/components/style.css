@@ -25,12 +25,12 @@ body {
     font-size: 2em;
     border-radius: 5px;
     opacity: .5;
-    margin: auto;
     transition: .3s;
     padding: 0.5em;
     position: fixed;
-    top: 70vh;
-    right: 17vh
+    left: 0;
+    right: 0;
+    margin: auto;
 
 
 }
@@ -470,14 +470,6 @@ button:focus {
     transform: translate(95vw, 90vh);
 }
 
-.about {
-    font-size: x-small;
-    display: block;
-    text-align: center;
-    top: 20%;
-    left: 50%;
-    position: fixed;
-}
 
 .contact {
     width: fit-content;
@@ -489,22 +481,51 @@ button:focus {
     text-align: center;
 }
 
+.about {
+    font-size: medium;
+    display: block;
+    text-align: center;
+    top: 20%;
+    left: 50%;
+    position: fixed;
+}
+
+.skills {
+    overflow: auto;
+    color: white;
+    padding: 50px;
+    text-align: left;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.projects {
+    color: white;
+    overflow-y: auto;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+
 @media (min-width: 200px) {
+    .button1 {
+        top: 10vh;
+
+    }
+
+    .about {
+        font-size: small;
+
+    }
+
     .skills {
-        overflow: auto;
-        color: white;
-        padding: 5%;
-        margin: auto;
-        text-align: left;
-        left: 100px;
-        position: absolute;
         height: 500px;
 
     }
 
     .projects {
-        color: white;
-        overflow-y: auto;
         height: 500px;
         width: 300px;
 
@@ -513,26 +534,20 @@ button:focus {
 }
 
 @media (min-width: 768px) {
-    .skills {
-        overflow: auto;
-        color: white;
-        padding: 5%;
-        margin: auto;
-        text-align: left;
-        left: 100px;
-        position: absolute;
-
+    .button1 {
+        top: 70vh;
     }
 
+    .about {
+        font-size: medium;
+    }
+
+
     .projects {
-        color: white;
-        padding: 5%;
-        margin-left: 20%;
         width: 700px;
         height: 400px;
-        overflow: auto;
-        right: 50px;
-        position: absolute;
+
+
     }
 
 }
@@ -548,11 +563,13 @@ h2 {
 }
 
 footer {
-    position: fixed;
+
+    position:  fixed;
     background-color: #ffffff1a;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 8px;
     text-align: center;
+
 }
