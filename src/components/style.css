@@ -28,10 +28,9 @@ body {
     margin: auto;
     transition: .3s;
     padding: 0.5em;
-    position:absolute;
-    top:50vh;
-
-
+   position:fixed;
+    top:70vh;
+    right:17vh
 
 
 }
@@ -256,6 +255,7 @@ button:focus {
 }
 
 .about {
+    font-size:x-small;
     display: block;
     text-align: center;
     top: 20%;
@@ -478,11 +478,24 @@ button:focus {
     transform: translate(95vw, 90vh);
 }
 
-.skills {
-    color: white;
-    padding: 5%;
-    margin-left: 30%;
+@media (min-width: 200px) {
+    .skills {
+        color: white;
+        padding: 5%;
+        overflow-y: auto;
+        height: 500px;
+    }
 }
+
+@media (min-width: 768px) {
+    .skills {
+        overflow-y: auto;
+        color: white;
+        padding: 5%;
+        margin-left: 30%;
+    }
+}
+
 
 .projects {
     color: white;

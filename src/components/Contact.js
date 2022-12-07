@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
+import "./style.css"
 
 const ContactForm = () => {
     const [status, setStatus] = useState("Submit");
@@ -9,9 +10,6 @@ const ContactForm = () => {
         e.preventDefault();
         setStatus("Sending...");
         const {name, email, message} = e.target.elements;
-        console.log(name)
-        console.log(email)
-        console.log(message)
         let details = {
             name: name.value,
             email: email.value,

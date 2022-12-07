@@ -1,5 +1,5 @@
 import React from "react";
-import "./background.css"
+import "./style.css"
 import cv from "./cv.pdf"
 
 
