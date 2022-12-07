@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 function App() {
     return (
         <div>
-            <Navbar/>
+            <Navbar className="body"/>
             <div className='light x1'></div>
             <div className='light x2'></div>
             <div className='light x3'></div>

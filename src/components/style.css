@@ -271,7 +271,7 @@ button:focus {
 #head1 {
     -webkit-animation: fadeIn 1 5s ease-in;
     -moz-animation: fadeIn 1 5s ease-in;
-    -o-animation: fadefadeIn 1 5s ease-in;
+    -o-animation: fadeIn 1 5s ease-in;
     animation: fadeIn 1 5s ease-in;
     animation-fill-mode: forwards;
 }
@@ -482,12 +482,14 @@ button:focus {
 }
 
 .about {
-    font-size: medium;
+    font-size: small;
     display: block;
     text-align: center;
     top: 20%;
     left: 50%;
+    bottom: 15%;
     position: fixed;
+
 }
 
 .skills {
@@ -507,6 +509,7 @@ button:focus {
     right: 0;
     margin: auto;
 
+
 }
 
 @media (min-width: 200px) {
@@ -515,10 +518,6 @@ button:focus {
 
     }
 
-    .about {
-        font-size: small;
-
-    }
 
     .skills {
         height: 500px;
@@ -526,8 +525,8 @@ button:focus {
     }
 
     .projects {
-        height: 500px;
-        width: 300px;
+        height: 70vh;
+
 
     }
 
@@ -535,17 +534,12 @@ button:focus {
 
 @media (min-width: 768px) {
     .button1 {
-        top: 70vh;
+        top: 80vh;
     }
-
-    .about {
-        font-size: medium;
-    }
-
 
     .projects {
-        width: 700px;
-        height: 400px;
+        width: 100vh;
+        height: 100vh;
 
 
     }
@@ -564,7 +558,7 @@ h2 {
 
 footer {
 
-    position:  fixed;
+    position: fixed;
     background-color: #ffffff1a;
     bottom: 0;
     left: 0;
