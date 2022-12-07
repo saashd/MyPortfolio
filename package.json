@@ -45,7 +45,6 @@
   "devDependencies": {
     "cors": "^2.8.5",
     "nodemailer": "^6.8.0",
-    "react-responsive": "^9.0.2",
     "react-router-dom": "^6.4.4"
   }
 }

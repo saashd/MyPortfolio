@@ -6,11 +6,7 @@ import "./style.css"
 export default function Projects() {
     return (
         <section className="projects">
-            <div
-                style={{
-                    overflow:"auto",
-                width: "70%",
-                height: "60vh"}}>
+
                 {projects.map((project) => (
                     <div style={{display: "flex"}}
                          key={project.image}>
@@ -39,7 +35,6 @@ export default function Projects() {
 
                     </div>
                 ))}
-            </div>
         </section>
     );
 }

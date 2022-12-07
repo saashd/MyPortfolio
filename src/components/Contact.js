@@ -30,20 +30,10 @@ const ContactForm = () => {
 
 
         <form onSubmit={handleSubmit}>
-            <Paper
+            <Paper className="contact"
 
                 elevation={3}
-                style={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    position: 'absolute',
-                    marginLeft: "33%",
-                    marginTop: "10%",
-                    display: 'inline',
-                    background: "#ffffffad",
-                    padding: "30px",
-
-                }}>
+                >
                 <TextField fullWidth
                            label="Name"
                            id="name"
