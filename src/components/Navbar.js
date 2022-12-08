@@ -8,6 +8,7 @@ import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
+import Footer from "./Footer";
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -80,6 +81,7 @@ function Navbar() {
             <TabPanel value={value} index={3}>
                 <Contact/>
             </TabPanel>
+            <Footer/>
         </div>
     );
 }

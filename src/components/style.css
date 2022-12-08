@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     height: 100vh;
@@ -256,11 +257,12 @@ button:focus {
 
 
 .header {
-    transform: translate(-50%, -50%);
+    /*transform: translate(-50%, -50%);*/
     font-family: 'Roboto', sans-serif;
     font-weight: 200;
     color: white;
     font-size: 2em;
+    padding-top: 50px;
 }
 
 #head1, #head2, #head3, #head4, #head5 {
@@ -459,6 +461,7 @@ button:focus {
     }
 }
 
+
 #footer {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
@@ -482,21 +485,22 @@ button:focus {
 }
 
 .about {
+
+    /*height: 70vh;*/
+    /*overflow: auto;*/
     font-size: small;
-    display: block;
+    display: contents;
     text-align: center;
-    top: 20%;
-    left: 50%;
-    bottom: 15%;
+    /*top: 20%;*/
+    /*left: 50%;*/
+    /*bottom: 15%;*/
     position: fixed;
 
 }
 
 .skills {
-    overflow: auto;
+    overflow-y: auto;
     color: white;
-    padding: 50px;
-    text-align: left;
     left: 0;
     right: 0;
     margin: auto;
@@ -520,13 +524,12 @@ button:focus {
 
 
     .skills {
-        height: 500px;
+        height: 70vh;
 
     }
 
     .projects {
         height: 70vh;
-
 
     }
 
@@ -540,8 +543,11 @@ button:focus {
     .projects {
         width: 100vh;
         height: 100vh;
+    }
 
-
+    .skills {
+        width: 100vh;
+        height: 100vh;
     }
 
 }

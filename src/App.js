@@ -19,7 +19,7 @@ function App() {
             <div className='light x7'></div>
             <div className='light x8'></div>
             <div className='light x9'></div>
-            <Footer />
+
 
         </div>
 
