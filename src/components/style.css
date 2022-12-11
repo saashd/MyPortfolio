@@ -499,6 +499,7 @@ button:focus {
     left: 0;
     right: 0;
     margin: auto;
+
 }
 
 .projects {
@@ -548,7 +549,7 @@ button:focus {
 }
 
 
-img {
+.img {
     width: 50px;
     height: 50px;
     position: absolute;

@@ -9,7 +9,7 @@ function ProjectInfo({project, handleClose, open}) {
         <Dialog onClose={handleClose} open={open}>
             <DialogTitle align="center">
                 {project.image ?
-                    <img alt=""
+                    <img className="img" alt=""
                          src={project.image}
                     />
                     : <></>}
