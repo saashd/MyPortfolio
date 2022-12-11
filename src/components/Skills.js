@@ -10,6 +10,24 @@ export default function Skills() {
     return (
         <section className="skills">
             <Paper align="center" occupation={3} style={{background: "#ffffff9c", padding: 50}}>
+                <h2>Education</h2>
+                <div style={{display: "flex"}}>
+                    <img width="20px"
+                         height="30px"
+                         src={technion_logo}
+                         alt={"technion logo"}
+                         loading="lazy"
+                    />
+                    <h3>Technion, Haifa | B.Sc in Information Systems</h3>
+                </div>
+                <div style={{textAlign: "left"}}>
+                    <li> During my studies I’ve been awarded 3 times by the Dean of the faculty for my excellence in
+                        studies.
+                    </li>
+                    <li>I’ve been mentoring first-year students in Python for nearly a year.</li>
+
+                </div>
+                <br></br>
                 <h2>Technical Skills</h2>
                 <Grid container spacing={2}>
                     {technologies.map(item => (
@@ -24,24 +42,8 @@ export default function Skills() {
                 </Grid>
                 <p> NumPy, Pandas, and other ML libraries; familiar with PyTorch.</p>
                 <p>Some academic experience with <b>Java</b>, <b>C++</b>, <b>C#</b>.</p>
-                <br></br>
-                <h2>Education</h2>
-                <div style={{display: "flex"}}>
-                    <img width="40px"
-                         height={"50px"}
-                         src={technion_logo}
-                         alt={"technion logo"}
-                         loading="lazy"
-                    />
-                    <h3>Technion, Haifa | B.Sc in Information Systems</h3>
-                </div>
-                <div style={{textAlign:"left"}}>
-                    <li> During my studies I’ve been awarded 3 times by the Dean of the faculty for my excellence in
-                    studies.
-                </li>
-                <li>I’ve been mentoring first-year students in Python for nearly a year.</li>
 
-                </div>
+
             </Paper>
         </section>
     );
