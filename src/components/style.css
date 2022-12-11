@@ -271,35 +271,35 @@ button:focus {
 }
 
 #head1 {
-    -webkit-animation: fadeIn 1 5s ease-in;
-    -moz-animation: fadeIn 1 5s ease-in;
-    -o-animation: fadeIn 1 5s ease-in;
-    animation: fadeIn 1 5s ease-in;
+    -webkit-animation: fadeIn 1 3s ease-in;
+    -moz-animation: fadeIn 1 3s ease-in;
+    -o-animation: fadeIn 1 3s ease-in;
+    animation: fadeIn 1 3s ease-in;
     animation-fill-mode: forwards;
 }
 
 #head2 {
-    -webkit-animation: fadeIn 1 5s ease-in;
-    -moz-animation: fadeIn 1 5s ease-in;
-    -o-animation: fadeIn 1 5s ease-in;
-    animation: fadeIn 1 5s ease-in;
-    -webkit-animation-delay: 3s;
-    -moz-animation-delay: 3s;
-    -o-animation-delay: 3s;
-    animation-delay: 3s;
+    -webkit-animation: fadeIn 1 3s ease-in;
+    -moz-animation: fadeIn 1 3s ease-in;
+    -o-animation: fadeIn 1 3s ease-in;
+    animation: fadeIn 1 3s ease-in;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
 }
 
 
 #head3 {
-    -webkit-animation: fadeIn 1 5s ease-in;
-    -moz-animation: fadeIn 1 5s ease-in;
-    -o-animation: fadeIn 1 5s ease-in;
-    animation: fadeIn 1 5s ease-in;
-    -webkit-animation-delay: 6s;
-    -moz-animation-delay: 6s;
-    -o-animation-delay: 6s;
-    animation-delay: 6s;
+    -webkit-animation: fadeIn 1 3s ease-in;
+    -moz-animation: fadeIn 1 3s ease-in;
+    -o-animation: fadeIn 1 3s ease-in;
+    animation: fadeIn 1 3s ease-in;
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    -o-animation-delay: 3s;
+    animation-delay: 3s;
     animation-fill-mode: forwards;
 
 }
