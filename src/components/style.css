@@ -279,14 +279,14 @@ button:focus {
 }
 
 #head2 {
-    -webkit-animation: fadeIn 1 3s ease-in;
-    -moz-animation: fadeIn 1 3s ease-in;
-    -o-animation: fadeIn 1 3s ease-in;
-    animation: fadeIn 1 3s ease-in;
-    -webkit-animation-delay: 2s;
-    -moz-animation-delay: 2s;
-    -o-animation-delay: 2s;
-    animation-delay: 2s;
+    -webkit-animation: fadeIn 1 2s ease-in;
+    -moz-animation: fadeIn 1 2s ease-in;
+    -o-animation: fadeIn 1 2s ease-in;
+    animation: fadeIn 1 2s ease-in;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -296,10 +296,10 @@ button:focus {
     -moz-animation: fadeIn 1 3s ease-in;
     -o-animation: fadeIn 1 3s ease-in;
     animation: fadeIn 1 3s ease-in;
-    -webkit-animation-delay: 3s;
-    -moz-animation-delay: 3s;
-    -o-animation-delay: 3s;
-    animation-delay: 3s;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
 
 }

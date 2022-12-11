@@ -6,7 +6,7 @@ import cv from "../icons/cv.pdf"
 export default function About() {
     return (
         <section className="about" >
-            <p id='head1' className="header">
+            <p  className="header">
                 Hello, I'm Alex!
             </p>
             <p id='head2' className="header">
