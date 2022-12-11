@@ -1,4 +1,38 @@
-export const projects = [
+const technologies = [
+    {
+        name: "python",
+        url: require('./icons/python.png')
+    },
+    {
+        name: "js",
+        url: require('./icons/js.png')
+    },
+    {
+        name: "reactjs",
+        url: require('./icons/react.png')
+    },
+    {
+        name: "flask",
+        url: require('./icons/flask.png')
+    },
+    {
+        name: "sqla",
+        url: require('./icons/sqla.png')
+    },
+    {
+        name: "html5",
+        url: require('./icons/html5.png')
+    },
+    {
+        name: "css3",
+        url: require('./icons/css3.png')
+    },
+
+
+
+];
+
+const projects = [
     {
         title: "CPMS - Course Management Platform",
         subtitle: "Final Project IE faculty",
@@ -40,3 +74,5 @@ export const projects = [
     },
 
 ];
+
+export {technologies, projects}
