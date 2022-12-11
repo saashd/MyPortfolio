@@ -14,6 +14,7 @@ export default function Skills() {
                 <div style={{display: "flex"}}>
                     <img width="20px"
                          height="30px"
+                         style={{padding:20}}
                          src={technion_logo}
                          alt={"technion logo"}
                          loading="lazy"

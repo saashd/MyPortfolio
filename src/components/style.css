@@ -573,3 +573,18 @@ footer {
     text-align: center;
 
 }
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff3d;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6b708f;
+  border-radius: 100px;
+}
+

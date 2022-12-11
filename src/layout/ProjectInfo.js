@@ -1,12 +1,15 @@
 import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import Dialog from "@mui/material/Dialog";
 import React from "react";
+import {Dialog, DialogContent, } from "@mui/material";
+
+
 
 function ProjectInfo({project, handleClose, open}) {
 
     return (
-        <Dialog onClose={handleClose} open={open}>
+        <Dialog
+            BackdropProps={{style: {backgroundColor: 'rgba(255,255,255,0.11)'}}}
+            onClose={handleClose} open={open}>
             <DialogTitle align="center">
                 {project.image ?
                     <img className="img" alt=""

@@ -22,7 +22,8 @@ export default function Projects() {
         <section className="projects">
             <Paper occupation={3} style={{background:"#ffffff1a"}}>
                 {projects.map((project) => (
-                    <div style={{display: "flex", padding: "50px"}}
+                    <div
+                        style={{display: "flex", padding: "50px"}}
                          key={project.image}>
                         <Link
                             style={{color: "white", textDecoration: "none", cursor: "pointer"}}
@@ -34,8 +35,8 @@ export default function Projects() {
                             </Typography>
                         </Link>
 
-                        <ProjectInfo project={selectedProject} handleClose={handleClose} open={open}/>
 
+                        <ProjectInfo project={selectedProject} handleClose={handleClose} open={open}/>
                     </div>
                 ))}
             </Paper>
