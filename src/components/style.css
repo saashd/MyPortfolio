@@ -554,8 +554,12 @@ button:focus {
 
 
 img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding:10px;
 }
 
 h2 {
@@ -572,4 +576,8 @@ footer {
     padding: 8px;
     text-align: center;
 
+}
+
+a {
+    text-decoration: none;
 }

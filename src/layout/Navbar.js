@@ -4,10 +4,10 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import PropTypes from 'prop-types';
-import About from "./About";
-import Skills from "./Skills";
-import Projects from "./Projects";
-import Contact from "./Contact";
+import About from "../components/About";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
 import Footer from "./Footer";
 
 function TabPanel(props) {
