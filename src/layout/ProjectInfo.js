@@ -1,7 +1,6 @@
 import DialogTitle from "@mui/material/DialogTitle";
 import React from "react";
-import {Dialog, DialogContent, } from "@mui/material";
-
+import {Dialog, DialogContent,} from "@mui/material";
 
 
 function ProjectInfo({project, handleClose, open}) {
@@ -10,7 +9,8 @@ function ProjectInfo({project, handleClose, open}) {
         <Dialog
             BackdropProps={{style: {backgroundColor: 'rgba(255,255,255,0.11)'}}}
             onClose={handleClose} open={open}>
-            <DialogTitle align="center">
+            <DialogTitle align="center"
+            style={{background:"#000000c9"}}>
                 {project.image ?
                     <img className="img" alt=""
                          src={project.image}
@@ -18,6 +18,14 @@ function ProjectInfo({project, handleClose, open}) {
                     : <></>}
 
                 <a
+                    className="zoom"
+                    style={{
+                        color: "white",
+                        fontFamily: "system-ui",
+                        fontSize: "x-large",
+                        textDecoration: "none",
+                        cursor: "pointer"
+                    }}
                     target="_blank"
                     rel="noreferrer"
                     href={project.link}>

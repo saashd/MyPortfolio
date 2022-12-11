@@ -32,7 +32,7 @@ export default function Skills() {
                 <h2>Technical Skills</h2>
                 <Grid container spacing={2}>
                     {technologies.map(item => (
-                        <Grid item sx={12} key={item.url}>
+                        <Grid item key={item.url}>
                             <img className="zoom"
                                  src={item.url}
                                  alt={item.name}

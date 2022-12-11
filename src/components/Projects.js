@@ -24,7 +24,7 @@ export default function Projects() {
                 {projects.map((project) => (
                     <div
                         style={{display: "flex", padding: "50px"}}
-                         key={project.image}>
+                         key={project.title}>
                         <Link
                             style={{color: "white", textDecoration: "none", cursor: "pointer"}}
                             onClick={() => {
