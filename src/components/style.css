@@ -537,12 +537,12 @@ button:focus {
 
     .projects {
         width: 100vh;
-        height: 100vh;
+        height: 70vh;
     }
 
     .skills {
         width: 100vh;
-        height: 100vh;
+        height: 70vh;
     }
 
 }
