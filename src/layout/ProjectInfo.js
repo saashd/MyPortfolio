@@ -23,10 +23,10 @@ function ProjectInfo({project, handleClose, open}) {
             </DialogTitle>
             <DialogContent>
 
-                <h2>
+                <h3>
                     {project.subtitle}
-                </h2>
-                <p>{project.description}</p>
+                </h3>
+                <p style={{whiteSpace: "pre-wrap"}}>{project.description}</p>
             </DialogContent>
 
         </Dialog>
