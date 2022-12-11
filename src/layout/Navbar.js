@@ -60,7 +60,6 @@ function Navbar() {
                     value={value}
                     onChange={handleChange}
                     textColor="inherit"
-                    indicatorColor="secondary"
                     centered={true}
                 >
                     <Tab label="About" {...a11yProps(0)}/>

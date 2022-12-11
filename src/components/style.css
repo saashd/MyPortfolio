@@ -3,7 +3,7 @@ body {
     margin: 0;
     height: 100vh;
     font-weight: 100;
-    background: radial-gradient(#a23982, #1f1013);
+    background: radial-gradient(#212e75, #1f1013);
     -webkit-overflow-Y: hidden;
     -moz-overflow-Y: hidden;
     -o-overflow-Y: hidden;
@@ -486,14 +486,9 @@ button:focus {
 
 .about {
 
-    /*height: 70vh;*/
-    /*overflow: auto;*/
     font-size: small;
     display: contents;
     text-align: center;
-    /*top: 20%;*/
-    /*left: 50%;*/
-    /*bottom: 15%;*/
     position: fixed;
 
 }
@@ -559,7 +554,7 @@ img {
     position: absolute;
     left: 0;
     top: 0;
-    padding:10px;
+    padding: 10px;
 }
 
 h2 {
@@ -576,8 +571,4 @@ footer {
     padding: 8px;
     text-align: center;
 
-}
-
-a {
-    text-decoration: none;
 }
