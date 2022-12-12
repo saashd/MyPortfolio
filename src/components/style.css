@@ -475,7 +475,7 @@ button:focus {
 
 
 .contact {
-    width: fit-content;
+    width: 30vw;
     height: fit-content;
     background: #ffffffad;
     padding: 30px;
@@ -537,12 +537,12 @@ button:focus {
     }
 
     .projects {
-        width: 100vh;
+        width: 50vw;
         height: 70vh;
     }
 
     .skills {
-        width: 100vh;
+        width: 50vw;
         height: 70vh;
     }
 
