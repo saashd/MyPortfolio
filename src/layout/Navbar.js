@@ -54,19 +54,20 @@ function Navbar() {
     return (
         <div>
             <AppBar position="static" style={{background: 'transparent', boxShadow: 'none'}}>
-                <Tabs
-
-                    variant={'standard'}
-                    value={value}
-                    onChange={handleChange}
-                    textColor="inherit"
-                    centered={true}
-                >
-                    <Tab label="About" {...a11yProps(0)}/>
-                    <Tab label="Education & Skills" {...a11yProps(1)} />
-                    <Tab label="Projects" {...a11yProps(2)} />
-                    <Tab label="Contact" {...a11yProps(3)} />
-                </Tabs>
+                <Box display="flex" justifyContent="center" width="100%">
+                    <Tabs
+                        variant="scrollable"
+                        value={value}
+                        onChange={handleChange}
+                        textColor="inherit"
+                        centered={true}
+                    >
+                        <Tab label="About" {...a11yProps(0)}/>
+                        <Tab label="Education & Skills" {...a11yProps(1)} />
+                        <Tab label="Projects" {...a11yProps(2)} />
+                        <Tab label="Contact" {...a11yProps(3)} />
+                    </Tabs>
+                </Box>
             </AppBar>
             <TabPanel value={value} index={0}>
                 <About/>
@@ -81,6 +82,7 @@ function Navbar() {
                 <Contact/>
             </TabPanel>
             <Footer/>
+
         </div>
     );
 }
