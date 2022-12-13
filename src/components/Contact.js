@@ -105,7 +105,6 @@ function ContactForm() {
                 </div>
                 <div style={{margin:"10px"}}>
                     <Recaptcha
-                        size="small"
                         className="captcha"
                         sitekey={process.env.REACT_APP_SITE_KEY}
                         render="explicit"
