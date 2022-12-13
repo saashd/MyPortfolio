@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The project deployed using [Netlify](https://www.netlify.com/).
 
-Check out live: [Portfolio](https://fastidious-axolotl-9cab69.netlify.app/)
+Check out live: [Portfolio](https://alexdruzina.com)
 
 ## 🛠 
 
