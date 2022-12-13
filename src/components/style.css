@@ -476,16 +476,16 @@ button:focus {
 
 .contact {
     width: 30vw;
-    height: fit-content;
     background: #ffffffad;
     padding: 30px;
     opacity: 0.8;
     margin: auto;
     text-align: center;
+    overflow: auto;
+    height: 55vh;
 }
 
 .about {
-
     font-size: small;
     display: contents;
     text-align: center;
@@ -512,10 +512,19 @@ button:focus {
 
 }
 
+.captcha {
+    text-align: -webkit-center;
+    transform: scale(0.77);
+    -webkit-transform: scale(0.77);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    display: flex;
+    place-content: flex-end;
+}
+
 @media (min-width: 200px) {
     .button1 {
         top: 10vh;
-
     }
 
 
@@ -528,6 +537,7 @@ button:focus {
         height: 70vh;
 
     }
+
 
 }
 
@@ -575,16 +585,16 @@ footer {
 }
 
 ::-webkit-scrollbar {
-  width: 16px;
+    width: 16px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #ffffff3d;
-  border-radius: 100px;
+    background-color: #ffffff3d;
+    border-radius: 100px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #6b708f;
-  border-radius: 100px;
+    background-color: #6b708f;
+    border-radius: 100px;
 }
 

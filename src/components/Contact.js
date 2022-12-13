@@ -1,118 +1,127 @@
-import {useForm} from 'react-hook-form';
-import React from "react";
-import Button from "@mui/material/Button";
+import React, {useState} from 'react';
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
+import Recaptcha from "react-google-recaptcha"
 import emailjs from '@emailjs/browser';
-import Alert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
+function ContactForm() {
 
-const ContactForm = () => {
+    const [state, setState] = React.useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+    });
+    const [captchaValue, setCaptchaValue] = useState(null);
     const [open, setOpen] = React.useState(false);
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: {errors}
-    } = useForm();
 
-    const onSubmit = async (data) => {
-        const {name, email, subject, message} = data;
-        try {
-            const templateParams = {
-                name,
-                email,
-                subject,
-                message
-            };
+    const resetForm = () => {
+        setState({
+            name: "",
+            subject: "",
+            email: "",
+            message: ""
+        })
+    };
+
+    const handleChange = (event) => {
+        const value = event.target.value;
+        setState({
+            ...state,
+            [event.target.name]: value
+        });
+    };
+
+    const onChange = (captchaValue) => {
+        setCaptchaValue(captchaValue);
+    };
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (captchaValue) {
+            const templateParams = {...state, 'g-recaptcha-response': captchaValue};
             await emailjs.send(
                 process.env.REACT_APP_SERVICE_ID,
                 process.env.REACT_APP_TEMPLATE_ID,
                 templateParams,
                 process.env.REACT_APP_USER_ID
-            );
-            reset();
-             setOpen(true);
-        } catch (e) {
-            console.log(e);
+            ).then(r => {
+                if (r.status === 200) {
+                    setOpen(true)
+                    resetForm();
+                }
+            }).catch(e => {
+                console.log(e)
+            })
         }
+
     };
-
-
-
 
     return (
         <Paper className="contact" align="center"
                occupation={3}
                style={{background: "rgba(255,255,255,0.55)"}}
         >
-            <form id='contact-form' onSubmit={handleSubmit(onSubmit)} noValidate>
-                <div style={{display: "grid",gridGap: "10px"}}>
-                <TextField
-                    type='text'
-                    name='name'
-                    {...register('name', {
-                        required: {value: true, message: 'Please enter your name'},
-                        maxLength: {
-                            value: 30,
-                            message: 'Please use 30 characters or less'
-                        }
-                    })}
-                    placeholder='Name'
-                />
-                {errors.name && <span>{errors.name.message}</span>}
+            <form onSubmit={handleSubmit}>
+                <div style={{display: "grid", gridGap: "10px"}}>
+                    <TextField
+                        required
+                        name="name"
+                        type="text"
+                        placeholder="Your first and last name"
+                        value={state.name}
+                        onChange={handleChange}
+                    />
+                    <TextField
+                        required
+                        name="email"
+                        type="email"
+                        placeholder="email@gmail.com"
+                        value={state.email}
+                        onChange={handleChange}
+                    />
+                    <TextField
+                        required
+                        name="subject"
+                        type="text"
+                        placeholder="What is the subject?"
+                        value={state.subject}
+                        onChange={handleChange}
+                    />
 
-                <TextField
-                    type='email'
-                    name='email'
-                    {...register('email', {
-                        required: true,
-                        pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-                    })}
-                    placeholder='Email address'
-                />
-                {errors.email && (
-                    <span>Please enter a valid email address</span>
-                )}
-                <TextField
-                    type='text'
-                    name='subject'
-                    {...register('subject', {
-                        required: {value: true, message: 'Please enter a subject'},
-                        maxLength: {
-                            value: 75,
-                            message: 'Subject cannot exceed 75 characters'
-                        }
-                    })}
-                    placeholder='Subject'
-                />
-                {errors.subject && (
-                    <span>{errors.subject.message}</span>
-                )}
-                <TextField
-                    multiline
-                    rows={3}
-                    name='message'
-                    {...register('message', {
-                        required: true
-                    })}
-                    placeholder='Message'
-                />
-                {errors.message && <span>Please enter a message</span>}
+                    <TextField
+                        required
+                        multiline
+                        rows={3}
+                        name="message"
+                        placeholder="Tell me more about..."
+                        value={state.message}
+                        onChange={handleChange}
+                    />
                 </div>
-                <Button variant="outlined" type='submit' style={{margin: "10px"}}>
-                    Submit
-                </Button>
+                <div style={{margin:"10px"}}>
+                    <Recaptcha
+                        size="small"
+                        className="captcha"
+                        sitekey={process.env.REACT_APP_SITE_KEY}
+                        render="explicit"
+                        onChange={onChange}
+                    />
+                    <Button variant="outlined" type="submit">Send</Button>
+                </div>
+
             </form>
-            <Snackbar open={open} autoHideDuration={6000} >
-                <Alert  severity="success" sx={{width: '100%'}}>
-                    Message sent successfully!
+            <Snackbar open={open} autoHideDuration={6000}>
+                <Alert severity="success" sx={{width: '100%'}}>
+                    Your message has been sent successfully. I will contact you soon.
                 </Alert>
             </Snackbar>
         </Paper>
-
     );
-};
+}
 
 export default ContactForm;
