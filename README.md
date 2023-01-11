@@ -1,17 +1,19 @@
 # My Web Portfolio
 
+This is a personal web portfolio, showcasing my skills and projects. 
+The site was built using React, including React Hooks and React Router to maintain a single-page application. 
+Material UI was used for styling, and EmailJS was integrated for the contact form.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project was bootstrapped with Create React App and deployed using Netlify. You can check out the live site [here](https://alexdruzina.com).
 
-The project deployed using [Netlify](https://www.netlify.com/).
-
-Check out live: [Portfolio](https://fastidious-axolotl-9cab69.netlify.app/)
 
 ## 🛠 
 
-- **React** - uncluding React Hooks and React Router to maintain Single Page Application.
+- **React**
 
-- **Material UI** - styling
+- **Material UI** 
+
+- **EmailJS** 
 
 ## Badges
 
