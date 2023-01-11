@@ -3,6 +3,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import IconButton from "@mui/material/IconButton";
 import "../icons/icons_style.css"
+
 const Footer = () => {
     return <footer>
         <IconButton className="zoom" aria-label="linkedin"

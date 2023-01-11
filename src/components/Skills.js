@@ -30,7 +30,7 @@ export default function Skills() {
                 </div>
                 <br></br>
                 <h2>Technical Skills</h2>
-                <Grid container spacing={2}>
+                <Grid container spacing={2} alignItems={"center"} justifyContent={"center"}>
                     {technologies.map(item => (
                         <Grid item key={item.url}>
                             <img className="zoom"
@@ -42,7 +42,7 @@ export default function Skills() {
                     ))}
                 </Grid>
                 <p> NumPy, Pandas, and other ML libraries; familiar with PyTorch.</p>
-                <p>Some academic experience with <b>Java</b>, <b>C++</b>, <b>C#</b>.</p>
+                <p>Some academic experience with <b>Java</b>, <b>TypeScript</b>, <b>C#</b>, <b>Node.js</b>.</p>
 
 
             </Paper>

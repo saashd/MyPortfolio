@@ -34,8 +34,6 @@ export default function Projects() {
                                 {project.title}
                             </Typography>
                         </Link>
-
-
                         <ProjectInfo project={selectedProject} handleClose={handleClose} open={open}/>
                     </div>
                 ))}

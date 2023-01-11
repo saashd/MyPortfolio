@@ -16,3 +16,4 @@ Check out live: [Portfolio](https://fastidious-axolotl-9cab69.netlify.app/)
 ## Badges
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/21207592-e27a-4b35-9602-ce0b00338609/deploy-status)](https://app.netlify.com/sites/fastidious-axolotl-9cab69/deploys)
+[![HitCount](http://hits.dwyl.com/saashd/MyPortfolio.svg)](http://hits.dwyl.com/saashd/MyPortfolio)

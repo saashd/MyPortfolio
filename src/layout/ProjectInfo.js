@@ -1,6 +1,8 @@
 import DialogTitle from "@mui/material/DialogTitle";
 import React from "react";
 import {Dialog, DialogContent,} from "@mui/material";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 function ProjectInfo({project, handleClose, open}) {
 
@@ -20,25 +22,57 @@ function ProjectInfo({project, handleClose, open}) {
             onClose={handleClose} open={open}>
             <DialogTitle align="center"
                          style={{background: "#000000c9"}}>
-                {project.image ?
-                    <img className="img" alt=""
-                         src={project.image}
-                    />
-                    : <></>}
-                <a
-                    className="zoom"
-                    style={{
-                        color: "white",
-                        fontFamily: "system-ui",
-                        fontSize: "x-large",
-                        textDecoration: "none",
-                        cursor: "pointer"
-                    }}
-                    target="_blank"
-                    rel="noreferrer"
-                    href={project.link}>
-                    {project.title}
-                </a>
+
+                <Grid container spacing={2} justifyContent="center"
+                      alignItems="center">
+                    <Grid item>
+                        <a style={{
+                            textDecoration: "none",
+                            cursor: "pointer"
+                        }}
+                           target="_blank"
+                           rel="noreferrer"
+                           href={project.link}>
+                            {project.link ?
+                                <img
+                                    width="20px"
+                                    height="20px"
+                                    src={require('../icons/web.png')}
+                                    alt={''}
+                                    loading="lazy"
+                                />
+                                : <></>}
+                        </a>
+                    </Grid>
+                    <Grid item>
+                        <a style={{
+                            textDecoration: "none",
+                            cursor: "pointer"
+                        }}
+                           target="_blank"
+                           rel="noreferrer"
+                           href={project.github}>
+                            {project.github ?
+                                <img
+                                    width="20px"
+                                    height="20px"
+                                    src={require('../icons/github.png')}
+                                    alt={''}
+                                    loading="lazy"
+                                />
+                                : <></>}
+                        </a>
+                    </Grid>
+                    <Grid item>
+                        <Typography   variant={"h5"} style={{
+                            color: "white",
+                            fontFamily: "system-ui"
+                        }}>
+                            {project.title}
+                        </Typography>
+                    </Grid>
+                </Grid>
+
             </DialogTitle>
             <DialogContent>
 
@@ -46,10 +80,11 @@ function ProjectInfo({project, handleClose, open}) {
                     {project.subtitle}
                 </h3>
                 <div style={{whiteSpace: "pre-wrap"}}
-                   dangerouslySetInnerHTML={{__html: replaceURLWithHTMLLinks(project.description)}}/>
+                     dangerouslySetInnerHTML={{__html: replaceURLWithHTMLLinks(project.description)}}/>
             </DialogContent>
 
         </Dialog>
     );
 }
+
 export default ProjectInfo;
