@@ -1,10 +1,17 @@
-import DialogTitle from "@mui/material/DialogTitle";
-import React from "react";
-import {Dialog, DialogContent,} from "@mui/material";
+import React, {useState} from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import {ExpandLess, ExpandMore} from "@mui/icons-material";
+import Collapse from "@mui/material/Collapse";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LanguageIcon from '@mui/icons-material/Language';
 
-function ProjectInfo({project, handleClose, open}) {
+function ProjectInfo({project}) {
+    const [open, setOpen] = useState(false);
+    const handleClose = () => {
+        setOpen(!open)
+    };
 
     function replaceURLWithHTMLLinks(text) {
         //eslint-disable-next-line
@@ -15,75 +22,61 @@ function ProjectInfo({project, handleClose, open}) {
         }
 
     }
-
     return (
-        <Dialog
-            BackdropProps={{style: {backgroundColor: 'rgba(255,255,255,0.11)'}}}
-            onClose={handleClose} open={open}>
-            <DialogTitle align="center"
-                         style={{background: "#000000c9"}}>
-
-                <Grid container spacing={2} justifyContent="center"
-                      alignItems="center">
-                    <Grid item>
-                        <a style={{
-                            textDecoration: "none",
-                            cursor: "pointer"
-                        }}
-                           target="_blank"
-                           rel="noreferrer"
-                           href={project.link}>
-                            {project.link ?
-                                <img
-                                    width="20px"
-                                    height="20px"
-                                    src={require('../icons/web.png')}
-                                    alt={''}
-                                    loading="lazy"
-                                />
-                                : <></>}
-                        </a>
-                    </Grid>
-                    <Grid item>
-                        <a style={{
-                            textDecoration: "none",
-                            cursor: "pointer"
-                        }}
-                           target="_blank"
-                           rel="noreferrer"
-                           href={project.github}>
-                            {project.github ?
-                                <img
-                                    width="20px"
-                                    height="20px"
-                                    src={require('../icons/github.png')}
-                                    alt={''}
-                                    loading="lazy"
-                                />
-                                : <></>}
-                        </a>
-                    </Grid>
-                    <Grid item>
-                        <Typography   variant={"h5"} style={{
-                            color: "white",
-                            fontFamily: "system-ui"
-                        }}>
-                            {project.title}
-                        </Typography>
-                    </Grid>
+        <div>
+            <Grid container spacing={0}>
+                <Grid item xs={1}>
+                    <IconButton  onClick={handleClose} style={{color: "white"}}>
+                        {open ? <ExpandLess/> : <ExpandMore/>}
+                    </IconButton>
                 </Grid>
+                <Grid item xs={9}>
+                    <Typography variant={"h5"} style={{
+                        color: "white",
+                        fontFamily: "system-ui"
+                    }}>
+                        {project.title}
+                    </Typography>
+                </Grid>
+                {
+                    project.github ?
+                        <Grid item xs={1}>
+                            <IconButton
+                                className="zoom"
+                                aria-label={project.github}
+                                onClick={() => window.open(project.github)}
+                                style={{color: "white"}}>
+                                <GitHubIcon/>
+                            </IconButton>
 
-            </DialogTitle>
-            <DialogContent>
+                        </Grid> : <></>
+                }
+                {
+                    project.link ?
+                        <Grid item xs={1}>
+                            <IconButton
+                                className="zoom"
+                                aria-label={project.link}
+                                onClick={() => window.open(project.link)}
+                                style={{color: "white"}}>
+                                <LanguageIcon/>
+                            </IconButton>
 
-                <h3>
-                    {project.subtitle}
-                </h3>
-                <div style={{whiteSpace: "pre-wrap"}}
-                     dangerouslySetInnerHTML={{__html: replaceURLWithHTMLLinks(project.description)}}/>
-            </DialogContent>
-
-        </Dialog>
+                        </Grid> : <></>
+                }
+            </Grid>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+                <Typography variant={"body1"} style={{
+                    color: "white",
+                    fontFamily: "system-ui",
+                    margin: "5%"
+                }}>
+                    <h3>{project.subtitle}</h3>
+                    <div style={{whiteSpace: "pre-wrap"}}
+                         dangerouslySetInnerHTML={{__html: replaceURLWithHTMLLinks(project.description)}}/>
+                </Typography>
+            </Collapse>
+        </div>
     );
 }
 

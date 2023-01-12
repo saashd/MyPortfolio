@@ -7,6 +7,7 @@ import emailjs from '@emailjs/browser';
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
+
 function ContactForm() {
 
     const [state, setState] = React.useState({
@@ -103,7 +104,7 @@ function ContactForm() {
                         onChange={handleChange}
                     />
                 </div>
-                <div style={{margin:"10px"}}>
+                <div style={{margin: "10px"}}>
                     <Recaptcha
                         className="captcha"
                         sitekey={process.env.REACT_APP_SITE_KEY}

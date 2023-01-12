@@ -490,6 +490,9 @@ button:focus {
     display: contents;
     text-align: center;
     position: fixed;
+    top:0;
+    bottom:0;
+    margin:auto;
 
 }
 
@@ -543,7 +546,7 @@ button:focus {
 
 @media (min-width: 768px) {
     .button1 {
-        top: 80vh;
+        top: 60vh;
     }
 
     .projects {

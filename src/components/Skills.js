@@ -9,7 +9,7 @@ import technion_logo from "../icons/technion.png"
 export default function Skills() {
     return (
         <section className="skills">
-            <Paper align="center" occupation={3} style={{background: "#ffffff9c", padding: 50}}>
+            <Paper align="center" occupation={3} style={{background: "#ffffff1a", padding: 50,color:"white"}}>
                 <h2>Education</h2>
                 <div style={{display: "flex"}}>
                     <img width="20px"
