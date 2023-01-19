@@ -72,6 +72,19 @@ const projects = [
         github: "https://github.com/saashd/IOT-Project"
     },
     {
+        title: "E-commerce App",
+        subtitle: "MERN Stack (MongoDB, Express, React, and Node.js) Plant Shop App ",
+        description:
+        "The goal of this project is to create a shopping cart application\n"+
+            "for customers and to learn about the technologies involved in creating such an application.\n"+
+            "It has a server side built using MongoDB,Mongoose, and Express\n"+
+            "and a client side developed with React, Redux, JavaScript, and Material UI.\n"+
+            "Payments are accepted using Stripe.",
+        image: "",
+        link: "https://plants.alexdruzina.com/",
+        github: "https://github.com/saashd/e-commerce-app"
+    },
+    {
         title: "Todo App",
         subtitle: "Web-based task management application for managing tasks on a daily basis",
         description:
