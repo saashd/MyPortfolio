@@ -1,10 +1,14 @@
 import Navbar from "./layout/Navbar";
-import React from "react";
+import React, {useEffect} from "react";
 import "./components/style.css"
+import ReactGA from 'react-ga';
 
-
+ReactGA.initialize(process.env.REACT_APP_TRACKING_ID);
 
 function App() {
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
     return (
         <div>
             <Navbar className="body"/>
@@ -17,8 +21,6 @@ function App() {
             <div className='light x7'></div>
             <div className='light x8'></div>
             <div className='light x9'></div>
-
-
         </div>
 
 
