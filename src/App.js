@@ -1,7 +1,9 @@
-import Navbar from "./layout/Navbar";
 import React, {useEffect} from "react";
-import "./components/style.css"
 import ReactGA from 'react-ga';
+import LandingPage from "./pages/LandingPage";
+import Particles from "react-tsparticles";
+import {loadFull} from "tsparticles";
+import {backgroundOptions} from "./components/background/Background";
 
 ReactGA.initialize(process.env.REACT_APP_TRACKING_ID);
 
@@ -9,21 +11,17 @@ function App() {
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, []);
+
+    const particlesInit = async (main) => {
+        await loadFull(main);
+    };
     return (
         <div>
-            <Navbar className="body"/>
-            <div className='light x1'></div>
-            <div className='light x2'></div>
-            <div className='light x3'></div>
-            <div className='light x4'></div>
-            <div className='light x5'></div>
-            <div className='light x6'></div>
-            <div className='light x7'></div>
-            <div className='light x8'></div>
-            <div className='light x9'></div>
+            <LandingPage/>
+            <Particles id="particles-here" init={particlesInit} options={
+                backgroundOptions
+            }/>
         </div>
-
-
     );
 }
 

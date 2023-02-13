@@ -1,11 +1,41 @@
 import React, {useState} from 'react';
 import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Paper from "@mui/material/Paper";
 import Recaptcha from "react-google-recaptcha"
 import emailjs from '@emailjs/browser';
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+import styled from "styled-components";
+import Grid from "@mui/material/Grid";
+import {device} from "../utils/responsive";
+import {colors} from "../utils/colors";
+
+
+const TextWrapper = styled(TextField)`
+  width: 25vw;
+  @media only screen and ${device.mobile} {
+    width: 60vw;
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: ${colors.mainColor} !important;
+  }
+
+  .MuiFilledInput-root {
+    border-bottom: 0.1em solid ${colors.mainColor} !important;
+  }
+
+  .MuiInput-root {
+    border-bottom: 0.1em solid ${colors.mainColor} !important;
+  }
+`
+
+const ActionsWrapper = styled.div`
+  padding: 3vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+`
 
 
 function ContactForm() {
@@ -63,64 +93,79 @@ function ContactForm() {
     };
 
     return (
-        <Paper className="contact" align="center"
-               occupation={3}
-               style={{background: "rgba(255,255,255,0.55)"}}
-        >
+        <div>
+            <h3>CONTACT ME <br/>
+                &mdash;&#9733;&mdash;
+            </h3>
             <form onSubmit={handleSubmit}>
-                <div style={{display: "grid", gridGap: "10px"}}>
-                    <TextField
-                        required
-                        name="name"
-                        type="text"
-                        placeholder="Your first and last name"
-                        value={state.name}
-                        onChange={handleChange}
-                    />
-                    <TextField
-                        required
-                        name="email"
-                        type="email"
-                        placeholder="email@gmail.com"
-                        value={state.email}
-                        onChange={handleChange}
-                    />
-                    <TextField
-                        required
-                        name="subject"
-                        type="text"
-                        placeholder="What is the subject?"
-                        value={state.subject}
-                        onChange={handleChange}
-                    />
+                <Grid
+                    container
+                    spacing={2}
+                    direction="column"
+                    justifyContent="center"
+                     alignItems="center"
 
-                    <TextField
-                        required
-                        multiline
-                        rows={3}
-                        name="message"
-                        placeholder="Tell me more about..."
-                        value={state.message}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div style={{margin: "10px"}}>
+                    >
+                    <Grid item>
+                        <TextWrapper
+                            required
+                            name="name"
+                            type="text"
+                            placeholder="Your first and last name"
+                            value={state.name}
+                            onChange={handleChange}
+                        />
+                    </Grid>
+                    <Grid item>
+                        <TextWrapper
+                            required
+                            name="email"
+                            type="email"
+                            placeholder="email@gmail.com"
+                            value={state.email}
+                            onChange={handleChange}
+                        />
+                    </Grid>
+                    <Grid item>
+                        <TextWrapper
+                            required
+                            name="subject"
+                            type="text"
+                            placeholder="What is the subject?"
+                            value={state.subject}
+                            onChange={handleChange}
+                        />
+                    </Grid>
+                    <Grid item>
+                        <TextWrapper
+                            required
+                            multiline
+                            rows={3}
+                            name="message"
+                            placeholder="Tell me more about..."
+                            value={state.message}
+                            onChange={handleChange}
+                        />
+                    </Grid>
+
+                </Grid>
+                <ActionsWrapper>
                     <Recaptcha
-                        className="captcha"
+                        className={"captcha"}
                         sitekey={process.env.REACT_APP_SITE_KEY}
                         render="explicit"
                         onChange={onChange}
                     />
-                    <Button variant="outlined" type="submit">Send</Button>
-                </div>
+                    <button className="sendBtn" type="submit">Send</button>
+                </ActionsWrapper>
 
             </form>
-            <Snackbar open={open} autoHideDuration={6000}>
+            <Snackbar open={open} onClose={() => setOpen(false)} autoHideDuration={3000}>
                 <Alert severity="success" sx={{width: '100%'}}>
                     Your message has been sent successfully. I will contact you soon.
                 </Alert>
             </Snackbar>
-        </Paper>
+        </div>
     );
 }
 

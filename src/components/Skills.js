@@ -1,51 +1,51 @@
 import React from "react";
-import "./style.css"
-import "../icons/icons_style.css"
-import Paper from "@mui/material/Paper";
 import {technologies} from "../data";
 import Grid from "@mui/material/Grid";
-import technion_logo from "../icons/technion.png"
+import Tooltip from '@mui/material/Tooltip';
+import styled from "styled-components";
+import {device} from "../utils/responsive";
 
+const ImageWrapper = styled.img`
+  -webkit-filter: brightness(0);
+  filter: brightness(0);
+  padding: 10px;
+  transition: transform .2s;
+  width: 3em;
+  height: 3em;
+  margin: 0 auto;
+
+  @media only screen and ${device.mobile} {
+    width: 1em;
+    height: 1em;
+  }
+  @media only screen and ${device.tabletS} and ${device.tabletL} {
+    width: 2em;
+    height: 2em;
+  }
+
+  &:hover {
+    transform: scale(1.5);
+  }
+`
 export default function Skills() {
     return (
-        <section className="skills">
-            <Paper align="center" occupation={3} style={{background: "#ffffff1a", padding: 50,color:"white"}}>
-                <h2>Education</h2>
-                <div style={{display: "flex"}}>
-                    <img width="20px"
-                         height="30px"
-                         style={{padding:20}}
-                         src={technion_logo}
-                         alt={"technion logo"}
-                         loading="lazy"
-                    />
-                    <h3>Technion, Haifa | B.Sc in Information Systems</h3>
-                </div>
-                <div style={{textAlign: "left"}}>
-                    <li> During my studies I’ve been awarded 3 times by the Dean of the faculty for my excellence in
-                        studies.
-                    </li>
-                    <li>I’ve been mentoring first-year students in Python for nearly a year.</li>
-
-                </div>
-                <br></br>
-                <h2>Technical Skills</h2>
-                <Grid container spacing={2} alignItems={"center"} justifyContent={"center"}>
-                    {technologies.map(item => (
-                        <Grid item key={item.url}>
-                            <img className="zoom"
-                                 src={item.url}
-                                 alt={item.name}
-                                 loading="lazy"
-                            />
-                        </Grid>
-                    ))}
-                </Grid>
-                <p> NumPy, Pandas, and other ML libraries; familiar with PyTorch.</p>
-                <p>Some academic experience with <b>Java</b>, <b>TypeScript</b>, <b>C#</b>, <b>Node.js</b>.</p>
-
-
-            </Paper>
-        </section>
-    );
+        <div style={{textAlign:"justify"}}>
+            <p>I'm a recent B.Sc graduate in Information Systems from the Technion, Israel</p>
+            <p>During my studies I’ve been awarded 3 times by the Dean of the faculty for my excellence</p>
+            <p>I have about two years of experience with the following tools and technologies</p>
+            <Grid container spacing={2} alignItems={"center"} justifyContent={"center"}>
+                {technologies.map(item => (
+                    <Grid item key={item.url}>
+                        <Tooltip title={item.name}>
+                        <ImageWrapper
+                            src={item.url}
+                            alt={item.name}
+                            loading="lazy"
+                        /></Tooltip>
+                    </Grid>
+                ))}
+            </Grid>
+            <p>I'm also familiar with Java, TypeScript, C#</p>
+        </div>
+    )
 }
